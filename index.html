@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SparkWay - طريقك الأسرع للتوصيل والتسوق</title>
+    
+    <!-- Google tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0DN8B09LJT"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-0DN8B09LJT');
+    </script>
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        sparkPrimary: '#243B64',
+                        sparkGold: '#B8860B',
+                        sparkGoldHover: '#997009',
+                    },
+                    fontFamily: {
+                        cairo: ['Cairo', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Cairo', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-900 antialiased selection:bg-sparkGold selection:text-white">
+
+    <!-- شريط التنقل العلوي (Navbar) -->
+   <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md shadow-sm border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            
+            <!-- زر القائمة الجانبية (Burger Menu) يظهر فقط على الهواتف والشاشات الصغيرة -->
+            <button onclick="toggleDrawer()" class="md:hidden text-slate-700 hover:text-sparkGold focus:outline-none p-2">
+                <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+
+            <!-- روابط التنقل للشاشات الكبيرة (أُزيلت بناءً على طلبك) -->
+            <nav class="hidden md:flex items-center gap-8 font-bold text-slate-700 text-base">
+            </nav>
+
+            <!-- الشعار على اليسار -->
+            <a href="#" class="flex items-center gap-2.5">
+                <span class="text-xl font-black tracking-tight"><span class="text-sparkGold">Spark</span><span class="text-sparkPrimary">Way</span></span>
+                <img src="logo.png" alt="SparkWay Logo" class="w-10 h-10 object-contain rounded-xl shadow-md">
+            </a>
+
+        </div>
+    </header>
+
+    <!-- القائمة الجانبية المنسدلة (Mobile Drawer) -->
+    <div id="mobileDrawer" class="fixed inset-0 z-50 bg-black/50 backdrop-blur-sm hidden transition-opacity duration-300">
+        <div class="absolute right-0 top-0 bottom-0 w-72 bg-white shadow-2xl p-6 flex flex-col justify-between transform translate-x-full transition-transform duration-300" id="drawerContent">
+            <div>
+                <!-- رأس القائمة الجانبية مع زر الإغلاق -->
+                <div class="flex items-center justify-between mb-8 pb-4 border-b border-slate-100">
+                    <div class="flex items-center gap-2">
+                        <img src="logo.png" alt="Logo" class="w-8 h-8 object-contain rounded-lg">
+                        <span class="text-base font-black"><span class="text-sparkGold">Spark</span><span class="text-sparkPrimary">Way</span></span>
+                    </div>
+                    <button onclick="toggleDrawer()" class="text-slate-400 hover:text-slate-700 p-1">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                        </svg>
+                    </button>
+                </div>
+
+                <!-- الروابط داخل الـ Drawer (أُزيلت بناءً على طلبك) -->
+                <nav class="flex flex-col gap-3 font-bold text-slate-700 text-base">
+                </nav>
+            </div>
+
+            <div class="text-center text-xs text-slate-400 font-medium pt-4 border-t border-slate-100">
+                جميع الحقوق محفوظة © 2026 SparkWay
+            </div>
+        </div>
+    </div>
+
+    <!-- قسم البطل الرئيسي (Hero Section) -->
+    <section class="relative overflow-hidden pt-16 pb-24 lg:pt-24 lg:pb-32 bg-gradient-to-b from-white via-slate-100/50 to-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- النصوص والأزرار -->
+                <div class="lg:col-span-7 text-center lg:text-right">
+                    <div class="inline-flex items-center gap-2 bg-sparkPrimary/10 text-sparkPrimary px-4 py-2 rounded-full font-bold text-sm mb-6 border border-sparkPrimary/20">
+                        <span class="w-2.5 h-2.5 rounded-full bg-sparkGold animate-pulse"></span>
+                        المنصة الشاملة لتلبية كافة احتياجاتك اليومية
+                    </div>
+                    <h1 class="text-2xl sm:text-3xl lg:text-4xl font-black text-sparkPrimary leading-tight mb-6">
+                        طريقك الأسرع لتوصيل <span class="text-sparkGold">الركاب، الأغراض، والطلبات!</span>
+                    </h1>
+                    <p class="text-lg sm:text-xl text-slate-700 mb-8 max-w-2xl mx-auto lg:mx-0 font-medium leading-relaxed">
+                        مع SparkWay، نجمع لك خدمات النقل الذكي، توصيل الطرود والأغراض الشخصية، وأشهى وجبات المطاعم والمتاجر في مكان واحد بكل سهولة وأمان.
+                    </p>
+                    
+                    <!-- أزرار التحميل والتفاعل -->
+                    <div id="download" class="flex flex-col sm:flex-row flex-wrap items-center justify-center lg:justify-start gap-4">
+                        
+                        <!-- زر تحميل ملف sparkway.apk المحلي -->
+                        <a href="sparkway.apk" download onclick="gtag('event', 'download_apk_local', {'event_category': 'App', 'event_label': 'Local APK'});" class="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-sparkPrimary hover:bg-opacity-90 text-white px-6 py-4 rounded-2xl font-bold shadow-lg transition-all transform hover:-translate-y-1">
+                            <svg class="w-6 h-6 text-sparkGold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                            <div class="text-right">
+                                <div class="text-xs text-slate-300 font-normal">تطبيق مباشر للأندرويد</div>
+                                <div class="text-base font-bold leading-none">تحميل APK</div>
+                            </div>
+                        </a>
+
+                        <!-- زر Google Play (معطل مؤقتاً) -->
+                        <button disabled class="cursor-not-allowed w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-slate-300 text-slate-700 px-6 py-4 rounded-2xl font-bold shadow-inner opacity-90 transition-all">
+                            <svg class="w-6 h-6 text-slate-500" fill="currentColor" viewBox="0 0 24 24"><path d="M3.609 1.814L13.792 12 3.61 22.186a1.53 1.53 0 0 1-.295-.916V2.73c0-.353.107-.689.294-.916zM15.207 13.414l2.122 2.122-10.829 6.25c-.718.415-1.554.17-1.97-.548l10.677-7.824zM15.207 10.586L4.53 2.762c.416-.718 1.252-.963 1.97-.548l10.829 6.25-2.122 2.122zM17.329 15.536l3.064 1.769c.983.568.983 1.494 0 2.062l-3.064 1.769-2.122-2.122 2.122-2.478z"/></svg>
+                            <div class="text-right">
+                                <div class="text-xs text-slate-500 font-normal flex items-center gap-1">تحميل من <span class="bg-slate-400 text-white text-[10px] px-1.5 py-0.2 rounded">قريباً</span></div>
+                                <div class="text-base font-bold leading-none">Google Play</div>
+                            </div>
+                        </button>
+
+                        <!-- زر App Store (معطل مؤقتاً) -->
+                        <button disabled class="cursor-not-allowed w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-slate-300 text-slate-700 px-6 py-4 rounded-2xl font-bold shadow-inner opacity-90 transition-all">
+                            <svg class="w-6 h-6 text-slate-500" fill="currentColor" viewBox="0 0 24 24"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.85 5.23c.64-.78 1.08-1.87.96-2.96-1.03.04-2.28.69-3.01 1.47-.57.6-1.08 1.7-1.01 2.76 1.15.09 2.32-.57 3.06-1.27z"/></svg>
+                            <div class="text-right">
+                                <div class="text-xs text-slate-500 font-normal flex items-center gap-1">تحميل من <span class="bg-slate-400 text-white text-[10px] px-1.5 py-0.2 rounded">قريباً</span></div>
+                                <div class="text-base font-bold leading-none">App Store</div>
+                            </div>
+                        </button>
+
+                    </div>
+                </div>
+
+                <!-- عنصر بصري -->
+                <div class="lg:col-span-5 flex justify-center">
+                    <div class="relative w-full max-w-sm bg-gradient-to-tr from-sparkPrimary to-sparkGold rounded-3xl p-3 shadow-2xl">
+                        <div class="bg-sparkPrimary rounded-2xl p-6 text-white text-center border border-sparkGold/30">
+                            <div class="w-16 h-16 bg-white rounded-2xl mx-auto flex items-center justify-center mb-4 shadow-lg p-2">
+                                <img src="logo.png" alt="SparkWay Logo" class="w-full h-full object-contain">
+                            </div>
+                            <h3 class="text-xl font-bold mb-2">تطبيق SparkWay الذكي</h3>
+                            <p class="text-slate-300 text-sm mb-6 font-medium">رحلاتك، أغراضك، ومشترياتك.. أينما كنت في أسرع وقت.</p>
+                            <div class="bg-slate-900/60 rounded-xl p-4 text-right space-y-3">
+                                <div class="flex items-center justify-between text-xs text-slate-200 font-semibold">
+                                    <span>توصيل ركاب آمن</span>
+                                </div>
+                                <div class="flex items-center justify-between text-xs text-slate-200 font-semibold">
+                                    <span>توصيل طرود وأغراض</span>
+                                </div>
+                                <div class="flex items-center justify-between text-xs text-slate-200 font-semibold">
+                                    <span>مطاعم ومتاجر</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم الخدمات المختصرة (Services Preview) -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-3xl sm:text-4xl font-black text-sparkPrimary mb-4">خدمات متكاملة بين يديك</h2>
+                <p class="text-slate-700 text-lg font-medium">كل ما تحتاجه يومياً وفرناه لك في منصة واحدة وبأعلى معايير الجودة والسرعة.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- الخدمة 1 -->
+                <div class="bg-slate-50 border border-slate-200 rounded-3xl p-8 transition-all hover:shadow-xl hover:-translate-y-1">
+                    <div class="w-14 h-14 bg-sparkGold/10 text-sparkGold rounded-2xl flex items-center justify-center text-2xl font-bold mb-6 border border-sparkGold/20">
+                        🚗
+                    </div>
+                    <h3 class="text-xl font-bold text-sparkPrimary mb-3">توصيل الركاب</h3>
+                    <p class="text-slate-700 leading-relaxed font-medium">تنقل براحة وأمان تام داخل المدينة مع نخبة من السائقين المحترفين وبأفضل الأسعار.</p>
+                </div>
+
+                <!-- الخدمة 2 -->
+                <div class="bg-slate-50 border border-slate-200 rounded-3xl p-8 transition-all hover:shadow-xl hover:-translate-y-1">
+                    <div class="w-14 h-14 bg-sparkGold/10 text-sparkGold rounded-2xl flex items-center justify-center text-2xl font-bold mb-6 border border-sparkGold/20">
+                        📦
+                    </div>
+                    <h3 class="text-xl font-bold text-sparkPrimary mb-3">توصيل الأغراض والطرود</h3>
+                    <p class="text-slate-700 leading-relaxed font-medium">أرسل واستلم أوراقك، هداياك، وأغراضك الشخصية بسرعة فائقة وتتبع مباشر.</p>
+                </div>
+
+                <!-- الخدمة 3 -->
+                <div class="bg-slate-50 border border-slate-200 rounded-3xl p-8 transition-all hover:shadow-xl hover:-translate-y-1">
+                    <div class="w-14 h-14 bg-sparkGold/10 text-sparkGold rounded-2xl flex items-center justify-center text-2xl font-bold mb-6 border border-sparkGold/20">
+                        🍔
+                    </div>
+                    <h3 class="text-xl font-bold text-sparkPrimary mb-3">المطاعم والمتاجر</h3>
+                    <p class="text-slate-700 leading-relaxed font-medium">اطلب وجبتك المفضلة أو مستلزماتك اليومية من أضخم قائمة مطاعم ومتاجر تصلك حارة وطازجة.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- الفوتر (Footer) -->
+    <footer class="bg-sparkPrimary text-slate-300 py-12 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-6">
+            <div class="flex items-center gap-3">
+                <img src="logo.png" alt="SparkWay Logo" class="w-9 h-9 object-contain rounded-xl">
+                <span class="text-xl font-bold text-white"><span class="text-sparkGold">Spark</span>Way</span>
+            </div>
+            <p class="text-sm font-medium">جميع الحقوق محفوظة © 2026 SparkWay</p>
+        </div>
+    </footer>
+
+    <!-- الدوال البرمجية (JavaScript للتحكم بالقائمة الجانبية) -->
+    <script>
+        function toggleDrawer() {
+            const drawer = document.getElementById('mobileDrawer');
+            const drawerContent = document.getElementById('drawerContent');
+            
+            if (drawer.classList.contains('hidden')) {
+                drawer.classList.remove('hidden');
+                setTimeout(() => {
+                    drawerContent.classList.remove('translate-x-full');
+                }, 10);
+            } else {
+                drawerContent.classList.add('translate-x-full');
+                setTimeout(() => {
+                    drawer.classList.add('hidden');
+                }, 300);
+            }
+        }
+    </script>
+
+</body>
+</html>
